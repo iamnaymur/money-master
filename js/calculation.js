@@ -1,38 +1,24 @@
-// function getFieldInput(id){
-//     const textElement = document.getElementById(id);
-
-//     const textElementValueString= textElement.value;
-//     const textElementValue= parseFloat(textElementValueString);
-
-//   return textElementValue;
-
-// }
-
 document.getElementById("calculate-btn").addEventListener("click", function () {
-  const incomeField = document.getElementById("income-input");
-  const incomeFieldString = incomeField.value;
-  const incomeInput = parseFloat(incomeFieldString);
+  const incomeInput = stringToNumberConverter("income-input");
 
-  const foodField = document.getElementById("food-cost");
-  const foodFieldString = foodField.value;
-  const foodCost = parseFloat(foodFieldString);
+  const foodCost = stringToNumberConverter("food-cost");
 
-  const rentField = document.getElementById("rent-cost");
-  const rentFieldString = rentField.value;
-  const rentCost = parseFloat(rentFieldString);
+  const rentCost = stringToNumberConverter("rent-cost");
 
-  const clothesField = document.getElementById("clothes-cost");
-  const clothesFieldString = clothesField.value;
-  const clothesCost = parseFloat(clothesFieldString);
+  const clothesCost = stringToNumberConverter("clothes-cost");
 
-  const previousTotalExpense = document.getElementById("total-expense");
-  const previousTotalString = previousTotalExpense.innerText;
-  const previousTotal = parseFloat(previousTotalString);
+  // const previousTotalExpense = document.getElementById("total-expense");
+  // const previousTotalString = previousTotalExpense.innerText;
+  // const previousTotal = parseFloat(previousTotalString);
+
+  const previousTotal = getTextElementValueById('total-expense');
 
   const totalExpense = foodCost + rentCost + clothesCost;
   const newTotal = previousTotal + totalExpense;
+  setTextElementValueById("total-expense", newTotal);
 
-  previousTotalExpense.innerText = newTotal;
+
+  // previousTotalExpense.innerText = newTotal;
 
   const balanceLeft = document.getElementById("balance-left");
   const previousBalanceString = balanceLeft.innerText;
@@ -45,23 +31,18 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 });
 
 document.getElementById("save-btn").addEventListener("click", function () {
-  const incomeField = document.getElementById("income-input");
-  const incomeFieldString = incomeField.value;
-  const incomeInput = parseFloat(incomeFieldString);
+  const incomeInput = stringToNumberConverter("income-input");
 
-  const savingInput = document.getElementById("save-percent");
-  const savingInputString = savingInput.value;
-  const savingPercentNumber = parseFloat(savingInputString);
-  // console.log(savingPercentNumber)
+  const savingPercentNumber = stringToNumberConverter("save-percent");
 
   const totalSaving = (savingPercentNumber / 100) * incomeInput;
 
-  const savingAmount= document.getElementById('save-amount');
-  const savingAmountString= savingAmount.innerText;
-  const previousSavings= parseFloat(savingAmountString);
+  const savingAmount = document.getElementById("save-amount");
+  const savingAmountString = savingAmount.innerText;
+  const previousSavings = parseFloat(savingAmountString);
 
-  const savings= previousSavings + totalSaving;
-  savingAmount.innerText= savings;
+  const savings = previousSavings + totalSaving;
+  savingAmount.innerText = savings;
 
   // remaining balance
 
@@ -69,17 +50,11 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const previousBalanceString = balanceLeft.innerText;
   const previousBalanceLeft = parseFloat(previousBalanceString);
 
-  const remainingBalance= document.getElementById('remaining-amount');
-  const remainingBalanceString= remainingBalance.innerText;
-  const previousRemaining= parseFloat(remainingBalanceString);
+  const remainingBalance = document.getElementById("remaining-amount");
+  const remainingBalanceString = remainingBalance.innerText;
+  const previousRemaining = parseFloat(remainingBalanceString);
 
-  const newRemainingBalance=previousBalanceLeft-totalSaving;
-  const balanceRemaining= previousRemaining+ newRemainingBalance;
-  remainingBalance.innerText= balanceRemaining;
-
-  // const newRemainingBalance= previousRemaining + newRemainingBalance;
-  // const remainingBalanceTotal= previousBalanceLeft - savings;
-  
-  // remainingBalance.innerText = remainingBalanceTotal;
-  
+  const newRemainingBalance = previousBalanceLeft - totalSaving;
+  const balanceRemaining = previousRemaining + newRemainingBalance;
+  remainingBalance.innerText = balanceRemaining;
 });
