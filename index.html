@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Money Master</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1 class="text-cyan-500 text-5xl font-semibold text-center">
+          Money Master.
+        </h1>
+      </div>
+      <section class="flex justify-around">
+        <div>
+          <img class="m-12" src="image/money-master.png" alt="" />
+        </div>
+        <div class="text-center">
+          <h1 class="m-7 font-semibold text-2xl">Income</h1>
+          <div class="flex">
+            <p class="p-3">Income</p>
+            <input
+              id="income-input"
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
+          <div>
+            <p class="m-7 font-semibold text-2xl">Expenses.</p>
+            <div class="flex mt-5 items-center">
+              <p class="p-3">Food</p>
+              <input
+                id="food-cost"
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <div class="flex mt-5 items-center">
+              <p class="p-3">Rent</p>
+              <input
+                id="rent-cost"
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <div class="flex mt-5 items-center">
+              <p class="p-3">Clothes</p>
+              <input
+                id="clothes-cost"
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <button
+              id="calculate-btn"
+              class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mt-5"
+            >
+              Calculate
+            </button>
+          </div>
+          <h1 class="m-7 font-semibold text-2xl">
+            Total Expense : <span id="total-expense">00</span>
+          </h1>
+          <h1 class="m-7 font-semibold text-2xl">Balance :<span id="balance-left">00</span> </h1>
+          <div>
+            <div class="flex items-center">
+              <p class="font-bold p-3">Save</p>
+              <input
+                id="save-percent"
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-50 max-w-xs"
+              />
+              <button id="save-btn" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg ml-3">
+                Save
+              </button>
+            </div>
+            <h1 class="m-7 font-semibold text-2xl">Saving Amount : <span id="save-amount">00</span></h1>
+            <h1 class="m-7 font-semibold text-2xl">Remaining Balance : <span id="remaining-amount">00</span> </h1>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!--js file connected -->
+    <script src="js/calculation.js"></script>
+  </body>
+</html>
