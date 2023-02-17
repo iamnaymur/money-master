@@ -19,3 +19,15 @@ function setTextElementValueById(elementId, newValue) {
   const textElement = document.getElementById(elementId);
   textElement.innerText = newValue; /*confusion on this line */
 }
+
+// alert element
+// you can use this alert function to set alerts for wrong input, i am not currently using this function in this project. But i have tried it, it works fine!!
+function alertWarningById(elementId){
+  const element= document.getElementById(elementId).value;
+  if(element!='number'){
+    alert('please put a number to continue')
+  }
+  else{
+    element.value;
+  }
+}

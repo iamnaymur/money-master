@@ -32,7 +32,7 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const savingPercentNumber = stringToNumberConverter("save-percent");
 
   const totalSaving = (savingPercentNumber / 100) * incomeInput;
-// EXAMPLE without the common function
+  // EXAMPLE without the common function
   // const savingAmount = document.getElementById("save-amount");
   // const savingAmountString = savingAmount.innerText;
   // const previousSavings = parseFloat(savingAmountString);
