@@ -7,27 +7,23 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   const clothesCost = stringToNumberConverter("clothes-cost");
 
+  // EXAMPLE without the common function-->
   // const previousTotalExpense = document.getElementById("total-expense");
   // const previousTotalString = previousTotalExpense.innerText;
   // const previousTotal = parseFloat(previousTotalString);
-
-  const previousTotal = getTextElementValueById('total-expense');
+  // previousTotalExpense.innerText = newTotal;
+  // --->
+  const previousTotal = getTextElementValueById("total-expense");
 
   const totalExpense = foodCost + rentCost + clothesCost;
   const newTotal = previousTotal + totalExpense;
   setTextElementValueById("total-expense", newTotal);
 
-
-  // previousTotalExpense.innerText = newTotal;
-
-  const balanceLeft = document.getElementById("balance-left");
-  const previousBalanceString = balanceLeft.innerText;
-  const previousBalanceLeft = parseFloat(previousBalanceString);
+  const previousBalanceLeft = getTextElementValueById("balance-left");
 
   const newBalance = incomeInput - totalExpense;
   const balance = previousBalanceLeft + newBalance;
-
-  balanceLeft.innerText = balance;
+  setTextElementValueById("balance-left", balance);
 });
 
 document.getElementById("save-btn").addEventListener("click", function () {
@@ -36,25 +32,25 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const savingPercentNumber = stringToNumberConverter("save-percent");
 
   const totalSaving = (savingPercentNumber / 100) * incomeInput;
-
-  const savingAmount = document.getElementById("save-amount");
-  const savingAmountString = savingAmount.innerText;
-  const previousSavings = parseFloat(savingAmountString);
+// EXAMPLE without the common function
+  // const savingAmount = document.getElementById("save-amount");
+  // const savingAmountString = savingAmount.innerText;
+  // const previousSavings = parseFloat(savingAmountString);
+  // savingAmount.innerText = savings;
+  const previousSavings = getTextElementValueById("save-amount");
 
   const savings = previousSavings + totalSaving;
-  savingAmount.innerText = savings;
+
+  setTextElementValueById("save-amount", savings);
 
   // remaining balance
 
-  const balanceLeft = document.getElementById("balance-left");
-  const previousBalanceString = balanceLeft.innerText;
-  const previousBalanceLeft = parseFloat(previousBalanceString);
+  const previousBalanceLeft = getTextElementValueById("balance-left");
 
-  const remainingBalance = document.getElementById("remaining-amount");
-  const remainingBalanceString = remainingBalance.innerText;
-  const previousRemaining = parseFloat(remainingBalanceString);
+  const previousRemaining = getTextElementValueById("remaining-amount");
 
   const newRemainingBalance = previousBalanceLeft - totalSaving;
   const balanceRemaining = previousRemaining + newRemainingBalance;
-  remainingBalance.innerText = balanceRemaining;
+
+  setTextElementValueById("remaining-amount", balanceRemaining);
 });
