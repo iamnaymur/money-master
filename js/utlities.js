@@ -1,8 +1,16 @@
 // get input field value by id
 function stringToNumberConverter(id) {
   const element = document.getElementById(id).value;
+
+
   return parseFloat(element);
 }
+// haven't used it in this, but you can add this to clear the input field after pressing the button
+function clearInput(elementId){
+  const element= document.getElementById(elementId);
+  element.value= "";
+}
+
 // get text element by id
 function getTextElementValueById(elementId) {
   const textElement = document.getElementById(elementId);
@@ -10,7 +18,7 @@ function getTextElementValueById(elementId) {
   const textElementValue = parseFloat(textElementValueString);
   return textElementValue;
 
-    // const previousTotalExpense = document.getElementById("total-expense");
+  // const previousTotalExpense = document.getElementById("total-expense");
   // const previousTotalString = previousTotalExpense.innerText;
   // const previousTotal = parseFloat(previousTotalString);
 }
@@ -22,12 +30,11 @@ function setTextElementValueById(elementId, newValue) {
 
 // alert element
 // you can use this alert function to set alerts for wrong input, i am not currently using this function in this project. But i have tried it, it works fine!!
-function alertWarningById(elementId){
-  const element= document.getElementById(elementId).value;
-  if(element!='number'){
-    alert('please put a number to continue')
-  }
-  else{
+function alertWarningById(elementId) {
+  const element = document.getElementById(elementId).value;
+  if (element != "number") {
+    alert("please put a number to continue");
+  } else {
     element.value;
   }
 }
